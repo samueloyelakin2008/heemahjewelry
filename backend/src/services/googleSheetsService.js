@@ -48,12 +48,7 @@ async function logSaleToSheet(record) {
   }
 }
 
-/**
- * Call this on a timer (see server.js) to retry queued rows. Successful
- * rows are removed; failed ones stay queued (with attempts incremented)
- * up to MAX_ATTEMPTS, after which they're left in the file for manual
- * inspection rather than retried forever.
- */
+
 const MAX_ATTEMPTS = 8;
 
 async function processRetryQueue() {
