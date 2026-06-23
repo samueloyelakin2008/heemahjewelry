@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+    * {
+        font-family: 'Poppins', sans-serif;
+    }
+</style>
+  <title>HEEMAH JEWERLY</title>
+</head>
+<body>
+
+      <!-- ============ Hero  Card ============ -->
+  <section>
+<div class="hero">
+  <svg class="bg-deco" viewBox="0 0 1000 600" fill="none">
+    <circle cx="800" cy="100" r="380" stroke="white" stroke-width=".8"/>
+    <circle cx="800" cy="100" r="220" stroke="white" stroke-width=".8"/>
+    <circle cx="100" cy="520" r="320" stroke="white" stroke-width=".8"/>
+    <line x1="0" y1="220" x2="1000" y2="220" stroke="white" stroke-width=".5"/>
+    <line x1="0" y1="420" x2="1000" y2="420" stroke="white" stroke-width=".5"/>
+  </svg>
+<nav class="flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4  bg-linear-gradient(135deg,#1e1b4b 0%,#312e81 40%,#4c1d95 70%,#6d28d9 100%)relative transition-all">
+    <a href="https://prebuiltui.com">
+        <img class="h-9" src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/dummyLogo/dummyLogoColored.svg" alt="dummyLogoColored">
+    </a>
+
+    <button aria-label="Menu" id="menu-toggle" class="sm:hidden">
+        <svg width="21" height="15" viewBox="0 0 21 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="21" height="1.5" rx=".75" fill="#426287"/>
+            <rect x="8" y="6" width="13" height="1.5" rx=".75" fill="#426287"/>
+            <rect x="6" y="13" width="15" height="1.5" rx=".75" fill="#426287"/>
+        </svg>
+    </button>
+
+    <div id="mobile-menu" class="hidden absolute top-[60px] left-0 w-full bg-white shadow-md py-4 flex-col items-start gap-2 px-5 text-sm md:hidden">
+        <a  href="index.html" class="block">Home</a>
+        <a href="#products" class="block">Products</a>
+        <a href="#contact" class="block">Contact</a>
+        <button class="cursor-pointer px-6 py-2 mt-2 bg-indigo-500 hover:bg-indigo-600 transition text-white rounded-full text-sm">
+            Login
+        </button>
+    </div>
+
+    <div class="hidden sm:flex items-center gap-8 text-white">
+        <a href="index.html" class="block">Home</a>
+        <a href="#products" class="block">Products</a>
+        <a href="#contact" class="block">Contact</a>
+
+        <div class="hidden lg:flex items-center text-sm gap-2 border border-gray-300 px-3 rounded-full opacity-0">
+            <input class="py-1.5 w-full bg-transparent outline-none placeholder-gray-500" type="text" placeholder="Search products" />
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.836 10.615 15 14.695" stroke="#7A7B7D" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path clip-rule="evenodd" d="M9.141 11.738c2.729-1.136 4.001-4.224 2.841-6.898S7.67.921 4.942 2.057C2.211 3.193.94 6.281 2.1 8.955s4.312 3.92 7.041 2.783" stroke="#7A7B7D" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+
+        <div class="relative cursor-pointer" id="cart-icon-btn">
+            <svg width="18" height="18" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M.583.583h2.333l1.564 7.81a1.17 1.17 0 0 0 1.166.94h5.67a1.17 1.17 0 0 0 1.167-.94l.933-4.893H3.5m2.333 8.75a.583.583 0 1 1-1.167 0 .583.583 0 0 1 1.167 0m6.417 0a.583.583 0 1 1-1.167 0 .583.583 0 0 1 1.167 0" stroke="#615fff" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <button class="absolute -top-2 -right-3 text-xs text-white bg-indigo-500 w-[18px] h-[18px] rounded-full" id="cart-badge">0</button>
+        </div>
+
+        <button class="cursor-pointer px-8 py-2 bg-white hover:bg-indigo-600 transition text-black rounded-full">
+            Get Started
+        </button>
+    </div>
+</nav>
+
+
+  <div class="hero-body">
+    <div style="display:flex;flex-direction:column;align-items:flex-start">
+      <div class="badge h-badge"><span class="dot"></span><span class="badge-text">New Collection 2026</span></div>
+      <h1 class="hero-h1 h-h1">Timeless<br/>Elegance,<br/><em>Crafted for You.</em></h1>
+      <p class="hero-desc h-p">Exquisite jewelry pieces designed to celebrate your beauty, confidence, and unforgettable moments.</p>
+      <div class="btn-row h-btns">
+        <a href="#products" class="cta-btn">
+          GET STARTED
+          <span class="cta-icon"><svg width="13" height="11" viewBox="0 0 12 10" fill="none"><path d="M.6 4.6h10m-4-4 4 4-4 4" stroke="white" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <a href="contact.html" class="ghost-btn">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+          CONTACT US
+        </a>
+      </div>
+      
+    </div>
+
+    <div class="img-cluster">
+      <div class="img-echo-wrap img-echo"><img src="img/product-09.jpg" alt=""/></div>
+      <div class="img-main-wrap img-main">
+        <img src="img/product-18.jpg" alt="Heemah jewelry model"/>
+        <div class="img-overlay"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <span class="scroll-lbl">Scroll</span>
+    <svg width="14" height="18" viewBox="0 0 14 20" fill="none"><rect x="4" y="1" width="6" height="10" rx="3" stroke="rgba(255,255,255,.3)" stroke-width="1.4"/><line x1="7" y1="4" x2="7" y2="7" stroke="rgba(255,255,255,.5)" stroke-width="1.4" stroke-linecap="round"/></svg>
+  </div>
+</div>
+</section>
+<section>
+      <!-- ============ Product Cards============ -->
+
+<section id="products" class="py-20">
+  <h2 class="text-3xl md:text-4xl font-medium text-center mb-8">
+    Featured Products
+  </h2>
+  <h3 class="text-lg text-center text-slate-600 mb-12">
+    Discover our latest collection
+  </h3>
+
+  <main class="px-6 md:px-[5%] py-12 max-w-[80rem] mx-auto">
+
+    <!-- ===== INITIAL 6 CARDS ===== -->
+    <div class="card-grid grid gap-6"
+         style="grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));">
+
+      <!-- ============ Product 01 ============ -->
+      <section class="product-card group relative grid grid-cols-[1fr_max-content] gap-y-2 gap-x-4 p-4 rounded-[40px]
+                       shadow-[0_20px_40px_-14px_rgba(0,0,0,0.25)] bg-lightest text-darkest"
+                style="--accent:oklch(0.5 0.27 275.83); --btn-bg:var(--accent); --btn-fg: oklch(from var(--accent) sign(0.7 - l) 0 0);">
+        <div class="thumb-stack grid col-span-2">
+          <img class="[grid-area:1/1] w-full aspect-square rounded-[24px] brightness-[0.8] grayscale"
+               src="img/product-01.jpg" alt="" width="400" height="400" />
+          <img class="[grid-area:1/1] w-full aspect-square rounded-[24px]"
+               src="img/product-01.jpg" alt="" width="400" height="400" />
+        </div>
+        <h2 class="text-base md:text-2xl font-medium py-2 self-center">CZ Stud Earring</h2>
+        <p class="justify-self-end self-center py-1.5 px-3 rounded-full font-medium tabular-nums"
+           style="background-color: var(--accent); color: var(--btn-fg);">₦1,500 Per Pair</p>
+        <p class="col-span-2 py-2 line-clamp-3">Minimalist sparkle. Cubic zirconia that catches light, not attention.</p>
+        <a href="#" class="purchase-button col-span-2 flex items-center justify-center gap-2 p-4 rounded-full font-bold border border-transparent"
+           data-id="cz-stud-earring" data-name="CZ Stud Earring" data-price="1500" data-image="img/product-01.jpg">
+          Add To Cart
+        </a>
+      </section>
+
+      <!-- ============ Product 02 ============ -->
+      <section class="product-card group relative grid grid-cols-[1fr_max-content] gap-y-2 gap-x-4 p-4 rounded-[40px]
+                       shadow-[0_20px_40px_-14px_rgba(0,0,0,0.25)] bg-lightest text-darkest"
+                style="--accent:oklch(0.5 0.27 275.83); --btn-bg:var(--accent); --btn-fg: oklch(from var(--accent) sign(0.7 - l) 0 0);">
+        <div class="thumb-stack grid col-span-2">
+          <img class="[grid-area:1/1] w-full aspect-square rounded-[24px] brightness-[0.8] grayscale"
+               src="img/product-02.jpg" alt="" width="400" height="400" />
+          <img class="[grid-area:1/1] w-full aspect-square rounded-[24px]"
+               src="img/product-02.jpg" alt="" width="400" height="400" />
+        </div>
+        <h2 class="text-base md:text-2xl font-medium py-2 self-center">Fashion Earring</h2>
+        <p class="justify-self-end self-center py-1.5 px-3 rounded-full font-medium tabular-nums"
+           style="background-color: var(--accent); color: var(--btn-fg);">₦1,500</p>
+        <p class="col-span-2 py-2 line-clamp-3">Bold curves, effortless edge. Made to turn heads without trying.</p>
+        <a href="#" class="purchase-button col-span-2 flex items-center justify-center gap-2 p-4 rounded-full font-bold border border-transparent"
+           data-id="fashion-earring" data-name="Fashion Earring" data-price="1500" data-image="img/product-02.jpg">
+          Add To Cart
+        </a>
+      </section>
+
+      <!-- ============ Product 03 ============ -->
+      <section class="product-card group relative grid grid-cols-[1fr_max-content] gap-y-2 gap-x-4 p-4 rounded-[40px]
+                       shadow-[0_20px_40px_-14px_rgba(0,0,0,0.25)] bg-lightest text-darkest"
+                style="--accent:oklch(0.5 0.27 275.83); --btn-bg:var(--accent); --btn-fg: oklch(from var(--accent) sign(0.7 - l) 0 0);">
+        <div class="thumb-stack grid col-span-2">
+          <img class="[grid-area:1/1] w-full aspect-square rounded-[24px] brightness-[0.8] grayscale"
+               src="img/product-03.jpg" alt="" width="400" height="400" />
+          <img class="[grid-area:1/1] w-full aspect-square rounded-[24px]"
+               src="img/product-03.jpg" alt="" width="400" height="400" />
+        </div>
+        <h2 class="text-base md:text-2xl font-medium py-2 self-center">VCA Bracelet</h2>
+        <p class="justify-self-end self-center py-1.5 px-3 rounded-full font-medium tabular-nums"
+           style="background-color: var(--accent); color: var(--btn-fg);">₦2,000</p>
+        <p class="col-span-2 py-2 line-clamp-3">Timeless quatrefoil charm. A nod to classic luxury, crafted for everyday grace.</p>
+        <a href="#" class="purchase-button col-span-2 flex items-center justify-center gap-2 p-4 rounded-full font-bold border border-transparent"
+           data-id="vca-bracelet" data-name="VCA Bracelet" data-price="2000" data-image="img/product-03.jpg">
+          Add To Cart
+        </a>
+      </section>
+
+      <!-- ============ Product 04 ============ -->
+      <section class="product-card group relative grid grid-cols-[1fr_max-content] gap-y-2 gap-x-4 p-4 rounded-[40px]
+                       shadow-[0_20px_40px_-14px_rgba(0,0,0,0.25)] bg-lightest text-darkest"
+                style="--accent:oklch(0.5 0.27 275.83); --btn-bg:var(--accent); --btn-fg: oklch(from var(--accent) sign(0.7 - l) 0 0);">
+        <div class="thumb-stack grid col-span-2">
+          <img class="[grid-area:1/1] w-full aspect-square rounded-[24px] brightness-[0.8] grayscale"
+               src="img/product-04.jpg" alt="" width="400" height="400" />
+          <img class="[grid-area:1/1] w-full aspect-square rounded-[24px]"
+               src="img/product-04.jpg" alt="" width="400" height="400" />
+        </div>
+        <h2 class="text-base md:text-2xl font-medium py-2 self-center">Silver Necklace</h2>
+        <p class="justify-self-end self-center py-1.5 px-3 rounded-full font-medium tabular-nums"
+           style="background-color: var(--accent); color: var(--btn-fg);">₦2,500</p>
+        <p class="col-span-2 py-2 line-clamp-3">Cool tone, clean lines. The quiet luxury piece your neckline needs.</p>
+        <a href="#" class="purchase-button col-span-2 flex items-center justify-center gap-2 p-4 rounded-full font-bold border border-transparent"
+           data-id="silver-necklace" data-name="Silver Necklace" data-price="2500" data-image="img/product-04.jpg">
+          Add To Cart
+        </a>
+      </section>
+
+      <!-- ============ Product 05 ============ -->
+      <section class="product-card group relative grid grid-cols-[1fr_max-content] gap-y-2 gap-x-4 p-4 rounded-[40px]
+                       shadow-[0_20px_40px_-14px_rgba(0,0,0,0.25)] bg-lightest text-darkest"
+                style="--accent:oklch(0.5 0.27 275.83); --btn-bg:var(--accent); --btn-fg: oklch(from var(--accent) sign(0.7 - l) 0 0);">
+        <div class="thumb-stack grid col-span-2">
+          <img class="[grid-area:1/1] w-full aspect-square rounded-[24px] brightness-[0.8] grayscale"
+               src="img/product-05.jpg" alt="" width="400" height="400" />
+          <img class="[grid-area:1/1] w-full aspect-square rounded-[24px]"
+               src="img/product-05.jpg" alt="" width="400" height="400" />
+        </div>
+        <h2 class="text-base md:text-2xl font-medium py-2 self-center">Zirconia Handchain</h2>
+        <p class="justify-self-end self-center py-1.5 px-3 rounded-full font-medium tabular-nums"
+           style="background-color: var(--accent); color: var(--btn-fg);">₦2,500</p>
+        <p class="col-span-2 py-2 line-clamp-3">From wrist to finger in one sweep. Delicate shine that moves with you.</p>
+        <a href="#" class="purchase-button col-span-2 flex items-center justify-center gap-2 p-4 rounded-full font-bold border border-transparent"
+           data-id="zirconia-handchain" data-name="Zirconia Handchain" data-price="2500" data-image="img/product-05.jpg">
+          Add To Cart
+        </a>
+      </section>
+
+      <!-- ============ Product 06 ============ -->
+      <section class="product-card group relative grid grid-cols-[1fr_max-content] gap-y-2 gap-x-4 p-4 rounded-[40px]
+                       shadow-[0_20px_40px_-14px_rgba(0,0,0,0.25)] bg-lightest text-darkest"
+                style="--accent:oklch(0.5 0.27 275.83); --btn-bg:var(--accent); --btn-fg: oklch(from var(--accent) sign(0.7 - l) 0 0);">
+        <div class="thumb-stack grid col-span-2">
+          <img class="[grid-area:1/1] w-full aspect-square rounded-[24px] brightness-[0.8] grayscale"
+               src="img/product-06.jpg" alt="" width="400" height="400" />
+          <img class="[grid-area:1/1] w-full aspect-square rounded-[24px]"
+               src="img/product-06.jpg" alt="" width="400" height="400" />
+        </div>
+        <h2 class="text-base md:text-2xl font-medium py-2 self-center">Stainless Steel Bangle</h2>
+        <p class="justify-self-end self-center py-1.5 px-3 rounded-full font-medium tabular-nums"
+           style="background-color: var(--accent); color: var(--btn-fg);">₦3,500</p>
+        <p class="col-span-2 py-2 line-clamp-3">Polished strength. Tarnish-free shine for the woman on the move.</p>
+        <a href="#" class="purchase-button col-span-2 flex items-center justify-center gap-2 p-4 rounded-full font-bold border border-transparent"
+           data-id="stainless-steel-bangle" data-name="Stainless Steel Bangle" data-price="3500" data-image="img/product-06.jpg">
+          Add To Cart
+        </a>
+      </section>
+
+    </div>
+
+
+    <!-- ===== REVEAL BUTTON ===== -->
+    <div class="reveal-wrap" id="reveal-wrap">
+      <button class="reveal-btn" id="reveal-btn" onclick="toggleExtraProducts()">
+        <span class="pulse-ring"></span>
+        <svg class="btn-icon" id="btn-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+             viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 3c-1 3-3.5 4.5-6 5 .5 4 2.5 6.5 6 8.5 3.5-2 5.5-4.5 6-8.5-2.5-.5-5-2-6-5z"/>
+          <path d="M12 3v18M8 10l4 2 4-2"/>
+        </svg>
+        <span id="btn-label">See 15 More Pieces</span>
+        <span class="count-badge" id="btn-count">15</span>
+      </button>
+      <span class="reveal-hint" id="reveal-hint">Tap to expand the full collection</span>
+    </div>
+
+
+    <!-- ===== EXTRA 15 CARDS (hidden by default) ===== -->
+    <div class="extra-section" id="extra-section">
+      <div class="extra-grid" id="extra-grid"
+           style="grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));">
+
+        <!-- ============ Product 07 ============ -->
+        <section class="product-card extra-card group relative grid grid-cols-[1fr_max-content] gap-y-2 gap-x-4 p-4 rounded-[40px]
+                         shadow-[0_20px_40px_-14px_rgba(0,0,0,0.25)] bg-lightest text-darkest"
+                  style="--accent:oklch(0.5 0.27 275.83); --btn-bg:var(--accent); --btn-fg: oklch(from var(--accent) sign(0.7 - l) 0 0);">
+          <div class="thumb-stack grid col-span-2">
+            <img class="[grid-area:1/1] w-full aspect-square rounded-[24px] brightness-[0.8] grayscale"
+                 src="img/product-07.jpg" alt="" width="400" height="400" />
+            <img class="[grid-area:1/1] w-full aspect-square rounded-[24px]"
+                 src="img/product-07.jpg" alt="" width="400" height="400" />
+          </div>
+          <h2 class="text-base md:text-2xl font-medium py-2 self-center">Pearl Drop Earring</h2>
+          <p class="justify-self-end self-center py-1.5 px-3 rounded-full font-medium tabular-nums"
+             style="background-color: var(--accent); color: var(--btn-fg);">₦2,000</p>
+          <p class="col-span-2 py-2 line-clamp-3">Softly luminous. A single pearl that speaks volumes in silence.</p>
+          <a href="#" class="purchase-button col-span-2 flex items-center justify-center gap-2 p-4 rounded-full font-bold border border-transparent"
+             data-id="pearl-drop-earring" data-name="Pearl Drop Earring" data-price="2000" data-image="img/product-07.jpg">
+            Add To Cart
+          </a>
+        </section>
+
+        <!-- ============ Product 08 ============ -->
+        <section class="product-card extra-card group relative grid grid-cols-[1fr_max-content] gap-y-2 gap-x-4 p-4 rounded-[40px]
+                         shadow-[0_20px_40px_-14px_rgba(0,0,0,0.25)] bg-lightest text-darkest"
+                  style="--accent:oklch(0.5 0.27 275.83); --btn-bg:var(--accent); --btn-fg: oklch(from var(--accent) sign(0.7 - l) 0 0);">
+          <div class="thumb-stack grid col-span-2">
+            <img class="[grid-area:1/1] w-full aspect-square rounded-[24px] brightness-[0.8] grayscale"
+                 src="img/product-08.jpg" alt="" width="400" height="400" />
+            <img class="[grid-area:1/1] w-full aspect-square rounded-[24px]"
+                 src="img/product-08.jpg" alt="" width="400" height="400" />
+          </div>
+          <h2 class="text-base md:text-2xl font-medium py-2 self-center">Gold Hoop Earring</h2>
+          <p class="justify-self-end self-center py-1.5 px-3 rounded-full font-medium tabular-nums"
+             style="background-color: var(--accent); color: var(--btn-fg);">₦1,800</p>
+          <p class="col-span-2 py-2 line-clamp-3">Classic hoops, timeless appeal. The everyday essential you'll never take off.</p>
+          <a href="#" class="purchase-button col-span-2 flex items-center justify-center gap-2 p-4 rounded-full font-bold border border-transparent"
+             data-id="gold-hoop-earring" data-name="Gold Hoop Earring" data-price="1800" data-image="img/product-08.jpg">
+            Add To Cart
+          </a>
+        </section>
+
+        <!-- ============ Product 09 ============ -->
+        <section class="product-card extra-card group relative grid grid-cols-[1fr_max-content] gap-y-2 gap-x-4 p-4 rounded-[40px]
+                         shadow-[0_20px_40px_-14px_rgba(0,0,0,0.25)] bg-lightest text-darkest"
+                  style="--accent:oklch(0.5 0.27 275.83); --btn-bg:var(--accent); --btn-fg: oklch(from var(--accent) sign(0.7 - l) 0 0);">
+          <div class="thumb-stack grid col-span-2">
+            <img class="[grid-area:1/1] w-full aspect-square rounded-[24px] brightness-[0.8] grayscale"
+                 src="img/product-09.jpg" alt="" width="400" height="400" />
+            <img class="[grid-area:1/1] w-full aspect-square rounded-[24px]"
+                 src="img/product-09.jpg" alt="" width="400" height="400" />
+          </div>
+          <h2 class="text-base md:text-2xl font-medium py-2 self-center">Crystal Choker</h2>
+          <p class="justify-self-end self-center py-1.5 px-3 rounded-full font-medium tabular-nums"
+             style="background-color: var(--accent); color: var(--btn-fg);">₦3,000</p>
+          <p class="col-span-2 py-2 line-clamp-3">Glamour, close to the skin. Crystal-set links that frame your décolletage.</p>
+          <a href="#" class="purchase-button col-span-2 flex items-center justify-center gap-2 p-4 rounded-full font-bold border border-transparent"
+             data-id="crystal-choker" data-name="Crystal Choker" data-price="3000" data-image="img/product-09.jpg">
+            Add To Cart
+          </a>
+        </section>
+
+        <!-- ============ Product 10 ============ -->
+        <section class="product-card extra-card group relative grid grid-cols-[1fr_max-content] gap-y-2 gap-x-4 p-4 rounded-[40px]
+                         shadow-[0_20px_40px_-14px_rgba(0,0,0,0.25)] bg-lightest text-darkest"
+                  style="--accent:oklch(0.5 0.27 275.83); --btn-bg:var(--accent); --btn-fg: oklch(from var(--accent) sign(0.7 - l) 0 0);">
+          <div class="thumb-stack grid col-span-2">
+            <img class="[grid-area:1/1] w-full aspect-square rounded-[24px] brightness-[0.8] grayscale"
+                 src="img/product-10.jpg" alt="" width="400" height="400" />
+            <img class="[grid-area:1/1] w-full aspect-square rounded-[24px]"
+                 src="img/product-10.jpg" alt="" width="400" height="400" />
+          </div>
+          <h2 class="text-base md:text-2xl font-medium py-2 self-center">Rose Gold Ring</h2>
+          <p class="justify-self-end self-center py-1.5 px-3 rounded-full font-medium tabular-nums"
+             style="background-color: var(--accent); color: var(--btn-fg);">₦2,200</p>
+          <p class="col-span-2 py-2 line-clamp-3">Warm tones, modern silhouette. Stacks beautifully or stands alone.</p>
+          <a href="#" class="purchase-button col-span-2 flex items-center justify-center gap-2 p-4 rounded-full font-bold border border-transparent"
+             data-id="rose-gold-ring" data-name="Rose Gold Ring" data-price="2200" data-image="img/product-10.jpg">
+            Add To Cart
+          </a>
+        </section>
+
+        <!-- ============ Product 11 ============ -->
+        <section class="product-card extra-card group relative grid grid-cols-[1fr_max-content] gap-y-2 gap-x-4 p-4 rounded-[40px]
+                         shadow-[0_20px_40px_-14px_rgba(0,0,0,0.25)] bg-lightest text-darkest"
+                  style="--accent:oklch(0.5 0.27 275.83); --btn-bg:var(--accent); --btn-fg: oklch(from var(--accent) sign(0.7 - l) 0 0);">
+          <div class="thumb-stack grid col-span-2">
+            <img class="[grid-area:1/1] w-full aspect-square rounded-[24px] brightness-[0.8] grayscale"
+                 src="img/product-11.jpg" alt="" width="400" height="400" />
+            <img class="[grid-area:1/1] w-full aspect-square rounded-[24px]"
+                 src="img/product-11.jpg" alt="" width="400" height="400" />
+          </div>
+          <h2 class="text-base md:text-2xl font-medium py-2 self-center">Anklet Chain</h2>
+          <p class="justify-self-end self-center py-1.5 px-3 rounded-full font-medium tabular-nums"
+             style="background-color: var(--accent); color: var(--btn-fg);">₦1,500</p>
+          <p class="col-span-2 py-2 line-clamp-3">Dainty links for bare skin. Understated charm that travels with every step.</p>
+          <a href="#" class="purchase-button col-span-2 flex items-center justify-center gap-2 p-4 rounded-full font-bold border border-transparent"
+             data-id="anklet-chain" data-name="Anklet Chain" data-price="1500" data-image="img/product-11.jpg">
+            Add To Cart
+          </a>
+        </section>
+
+        <!-- ============ Product 12 ============ -->
+        <section class="product-card extra-card group relative grid grid-cols-[1fr_max-content] gap-y-2 gap-x-4 p-4 rounded-[40px]
+                         shadow-[0_20px_40px_-14px_rgba(0,0,0,0.25)] bg-lightest text-darkest"
+                  style="--accent:oklch(0.5 0.27 275.83); --btn-bg:var(--accent); --btn-fg: oklch(from var(--accent) sign(0.7 - l) 0 0);">
+          <div class="thumb-stack grid col-span-2">
+            <img class="[grid-area:1/1] w-full aspect-square rounded-[24px] brightness-[0.8] grayscale"
+                 src="img/product-12.jpg" alt="" width="400" height="400" />
+            <img class="[grid-area:1/1] w-full aspect-square rounded-[24px]"
+                 src="img/product-12.jpg" alt="" width="400" height="400" />
+          </div>
+          <h2 class="text-base md:text-2xl font-medium py-2 self-center">Statement Cuff</h2>
+          <p class="justify-self-end self-center py-1.5 px-3 rounded-full font-medium tabular-nums"
+             style="background-color: var(--accent); color: var(--btn-fg);">₦4,000</p>
+          <p class="col-span-2 py-2 line-clamp-3">Wide, bold, unapologetic. The single piece that completes any look.</p>
+          <a href="#" class="purchase-button col-span-2 flex items-center justify-center gap-2 p-4 rounded-full font-bold border border-transparent"
+             data-id="statement-cuff" data-name="Statement Cuff" data-price="4000" data-image="img/product-12.jpg">
+            Add To Cart
+          </a>
+        </section>
+
+        <!-- ============ Product 13 ============ -->
+        <section class="product-card extra-card group relative grid grid-cols-[1fr_max-content] gap-y-2 gap-x-4 p-4 rounded-[40px]
+                         shadow-[0_20px_40px_-14px_rgba(0,0,0,0.25)] bg-lightest text-darkest"
+                  style="--accent:oklch(0.5 0.27 275.83); --btn-bg:var(--accent); --btn-fg: oklch(from var(--accent) sign(0.7 - l) 0 0);">
+          <div class="thumb-stack grid col-span-2">
+            <img class="[grid-area:1/1] w-full aspect-square rounded-[24px] brightness-[0.8] grayscale"
+                 src="img/product-13.jpg" alt="" width="400" height="400" />
+            <img class="[grid-area:1/1] w-full aspect-square rounded-[24px]"
+                 src="img/product-13.jpg" alt="" width="400" height="400" />
+          </div>
+          <h2 class="text-base md:text-2xl font-medium py-2 self-center">Layered Necklace</h2>
+          <p class="justify-self-end self-center py-1.5 px-3 rounded-full font-medium tabular-nums"
+             style="background-color: var(--accent); color: var(--btn-fg);">₦3,200</p>
+          <p class="col-span-2 py-2 line-clamp-3">Three lengths, one elegant move. Pre-layered so you don't have to.</p>
+          <a href="#" class="purchase-button col-span-2 flex items-center justify-center gap-2 p-4 rounded-full font-bold border border-transparent"
+             data-id="layered-necklace" data-name="Layered Necklace" data-price="3200" data-image="img/product-13.jpg">
+            Add To Cart
+          </a>
+        </section>
+
+        <!-- ============ Product 14 ============ -->
+        <section class="product-card extra-card group relative grid grid-cols-[1fr_max-content] gap-y-2 gap-x-4 p-4 rounded-[40px]
+                         shadow-[0_20px_40px_-14px_rgba(0,0,0,0.25)] bg-lightest text-darkest"
+                  style="--accent:oklch(0.5 0.27 275.83); --btn-bg:var(--accent); --btn-fg: oklch(from var(--accent) sign(0.7 - l) 0 0);">
+          <div class="thumb-stack grid col-span-2">
+            <img class="[grid-area:1/1] w-full aspect-square rounded-[24px] brightness-[0.8] grayscale"
+                 src="img/product-14.jpg" alt="" width="400" height="400" />
+            <img class="[grid-area:1/1] w-full aspect-square rounded-[24px]"
+                 src="img/product-14.jpg" alt="" width="400" height="400" />
+          </div>
+          <h2 class="text-base md:text-2xl font-medium py-2 self-center">Emerald Stud</h2>
+          <p class="justify-self-end self-center py-1.5 px-3 rounded-full font-medium tabular-nums"
+             style="background-color: var(--accent); color: var(--btn-fg);">₦2,800</p>
+          <p class="col-span-2 py-2 line-clamp-3">Deep green, immaculate cut. A jewel-toned touch for every occasion.</p>
+          <a href="#" class="purchase-button col-span-2 flex items-center justify-center gap-2 p-4 rounded-full font-bold border border-transparent"
+             data-id="emerald-stud" data-name="Emerald Stud" data-price="2800" data-image="img/product-14.jpg">
+            Add To Cart
+          </a>
+        </section>
+
+        <!-- ============ Product 15 ============ -->
+        <section class="product-card extra-card group relative grid grid-cols-[1fr_max-content] gap-y-2 gap-x-4 p-4 rounded-[40px]
+                         shadow-[0_20px_40px_-14px_rgba(0,0,0,0.25)] bg-lightest text-darkest"
+                  style="--accent:oklch(0.5 0.27 275.83); --btn-bg:var(--accent); --btn-fg: oklch(from var(--accent) sign(0.7 - l) 0 0);">
+          <div class="thumb-stack grid col-span-2">
+            <img class="[grid-area:1/1] w-full aspect-square rounded-[24px] brightness-[0.8] grayscale"
+                 src="img/product-15.jpg" alt="" width="400" height="400" />
+            <img class="[grid-area:1/1] w-full aspect-square rounded-[24px]"
+                 src="img/product-15.jpg" alt="" width="400" height="400" />
+          </div>
+          <h2 class="text-base md:text-2xl font-medium py-2 self-center">Tennis Bracelet</h2>
+          <p class="justify-self-end self-center py-1.5 px-3 rounded-full font-medium tabular-nums"
+             style="background-color: var(--accent); color: var(--btn-fg);">₦5,000</p>
+          <p class="col-span-2 py-2 line-clamp-3">A continuous line of brilliance. Everyday luxury at its most refined.</p>
+          <a href="#" class="purchase-button col-span-2 flex items-center justify-center gap-2 p-4 rounded-full font-bold border border-transparent"
+             data-id="tennis-bracelet" data-name="Tennis Bracelet" data-price="5000" data-image="img/product-15.jpg">
+            Add To Cart
+          </a>
+        </section>
+
+        <!-- ============ Product 16 ============ -->
+        <section class="product-card extra-card group relative grid grid-cols-[1fr_max-content] gap-y-2 gap-x-4 p-4 rounded-[40px]
+                         shadow-[0_20px_40px_-14px_rgba(0,0,0,0.25)] bg-lightest text-darkest"
+                  style="--accent:oklch(0.5 0.27 275.83); --btn-bg:var(--accent); --btn-fg: oklch(from var(--accent) sign(0.7 - l) 0 0);">
+          <div class="thumb-stack grid col-span-2">
+            <img class="[grid-area:1/1] w-full aspect-square rounded-[24px] brightness-[0.8] grayscale"
+                 src="img/product-16.jpg" alt="" width="400" height="400" />
+            <img class="[grid-area:1/1] w-full aspect-square rounded-[24px]"
+                 src="img/product-16.jpg" alt="" width="400" height="400" />
+          </div>
+          <h2 class="text-base md:text-2xl font-medium py-2 self-center">Charm Bracelet</h2>
+          <p class="justify-self-end self-center py-1.5 px-3 rounded-full font-medium tabular-nums"
+             style="background-color: var(--accent); color: var(--btn-fg);">₦2,500</p>
+          <p class="col-span-2 py-2 line-clamp-3">Each charm, a memory. Add to it, wear it, make it yours.</p>
+          <a href="#" class="purchase-button col-span-2 flex items-center justify-center gap-2 p-4 rounded-full font-bold border border-transparent"
+             data-id="charm-bracelet" data-name="Charm Bracelet" data-price="2500" data-image="img/product-16.jpg">
+            Add To Cart
+          </a>
+        </section>
+
+        <!-- ============ Product 17 ============ -->
+        <section class="product-card extra-card group relative grid grid-cols-[1fr_max-content] gap-y-2 gap-x-4 p-4 rounded-[40px]
+                         shadow-[0_20px_40px_-14px_rgba(0,0,0,0.25)] bg-lightest text-darkest"
+                  style="--accent:oklch(0.5 0.27 275.83); --btn-bg:var(--accent); --btn-fg: oklch(from var(--accent) sign(0.7 - l) 0 0);">
+          <div class="thumb-stack grid col-span-2">
+            <img class="[grid-area:1/1] w-full aspect-square rounded-[24px] brightness-[0.8] grayscale"
+                 src="img/product-17.jpg" alt="" width="400" height="400" />
+            <img class="[grid-area:1/1] w-full aspect-square rounded-[24px]"
+                 src="img/product-17.jpg" alt="" width="400" height="400" />
+          </div>
+          <h2 class="text-base md:text-2xl font-medium py-2 self-center">Twist Ring</h2>
+          <p class="justify-self-end self-center py-1.5 px-3 rounded-full font-medium tabular-nums"
+             style="background-color: var(--accent); color: var(--btn-fg);">₦1,800</p>
+          <p class="col-span-2 py-2 line-clamp-3">Sculpted metal, endlessly elegant. A ribbon of gold that wraps your finger.</p>
+          <a href="#" class="purchase-button col-span-2 flex items-center justify-center gap-2 p-4 rounded-full font-bold border border-transparent"
+             data-id="twist-ring" data-name="Twist Ring" data-price="1800" data-image="img/product-17.jpg">
+            Add To Cart
+          </a>
+        </section>
+
+        <!-- ============ Product 18 ============ -->
+        <section class="product-card extra-card group relative grid grid-cols-[1fr_max-content] gap-y-2 gap-x-4 p-4 rounded-[40px]
+                         shadow-[0_20px_40px_-14px_rgba(0,0,0,0.25)] bg-lightest text-darkest"
+                  style="--accent:oklch(0.5 0.27 275.83); --btn-bg:var(--accent); --btn-fg: oklch(from var(--accent) sign(0.7 - l) 0 0);">
+          <div class="thumb-stack grid col-span-2">
+            <img class="[grid-area:1/1] w-full aspect-square rounded-[24px] brightness-[0.8] grayscale"
+                 src="img/product-18.jpg" alt="" width="400" height="400" />
+            <img class="[grid-area:1/1] w-full aspect-square rounded-[24px]"
+                 src="img/product-18.jpg" alt="" width="400" height="400" />
+          </div>
+          <h2 class="text-base md:text-2xl font-medium py-2 self-center">Bar Necklace</h2>
+          <p class="justify-self-end self-center py-1.5 px-3 rounded-full font-medium tabular-nums"
+             style="background-color: var(--accent); color: var(--btn-fg);">₦2,000</p>
+          <p class="col-span-2 py-2 line-clamp-3">Minimalist geometry, maximum impact. The understated piece that pulls it all together.</p>
+          <a href="#" class="purchase-button col-span-2 flex items-center justify-center gap-2 p-4 rounded-full font-bold border border-transparent"
+             data-id="bar-necklace" data-name="Bar Necklace" data-price="2000" data-image="img/product-18.jpg">
+            Add To Cart
+          </a>
+        </section>
+
+        <!-- ============ Product 19 ============ -->
+        <section class="product-card extra-card group relative grid grid-cols-[1fr_max-content] gap-y-2 gap-x-4 p-4 rounded-[40px]
+                         shadow-[0_20px_40px_-14px_rgba(0,0,0,0.25)] bg-lightest text-darkest"
+                  style="--accent:oklch(0.5 0.27 275.83); --btn-bg:var(--accent); --btn-fg: oklch(from var(--accent) sign(0.7 - l) 0 0);">
+          <div class="thumb-stack grid col-span-2">
+            <img class="[grid-area:1/1] w-full aspect-square rounded-[24px] brightness-[0.8] grayscale"
+                 src="img/product-19.jpg" alt="" width="400" height="400" />
+            <img class="[grid-area:1/1] w-full aspect-square rounded-[24px]"
+                 src="img/product-19.jpg" alt="" width="400" height="400" />
+          </div>
+          <h2 class="text-base md:text-2xl font-medium py-2 self-center">Drop Pendant</h2>
+          <p class="justify-self-end self-center py-1.5 px-3 rounded-full font-medium tabular-nums"
+             style="background-color: var(--accent); color: var(--btn-fg);">₦2,700</p>
+          <p class="col-span-2 py-2 line-clamp-3">One gem, a whisper of chain. Simplicity is the ultimate sophistication.</p>
+          <a href="#" class="purchase-button col-span-2 flex items-center justify-center gap-2 p-4 rounded-full font-bold border border-transparent"
+             data-id="drop-pendant" data-name="Drop Pendant" data-price="2700" data-image="img/product-19.jpg">
+            Add To Cart
+          </a>
+        </section>
+
+        <!-- ============ Product 20 ============ -->
+        <section class="product-card extra-card group relative grid grid-cols-[1fr_max-content] gap-y-2 gap-x-4 p-4 rounded-[40px]
+                         shadow-[0_20px_40px_-14px_rgba(0,0,0,0.25)] bg-lightest text-darkest"
+                  style="--accent:oklch(0.5 0.27 275.83); --btn-bg:var(--accent); --btn-fg: oklch(from var(--accent) sign(0.7 - l) 0 0);">
+          <div class="thumb-stack grid col-span-2">
+            <img class="[grid-area:1/1] w-full aspect-square rounded-[24px] brightness-[0.8] grayscale"
+                 src="img/product-20.jpg" alt="" width="400" height="400" />
+            <img class="[grid-area:1/1] w-full aspect-square rounded-[24px]"
+                 src="img/product-20.jpg" alt="" width="400" height="400" />
+          </div>
+          <h2 class="text-base md:text-2xl font-medium py-2 self-center">Ear Cuff</h2>
+          <p class="justify-self-end self-center py-1.5 px-3 rounded-full font-medium tabular-nums"
+             style="background-color: var(--accent); color: var(--btn-fg);">₦1,200</p>
+          <p class="col-span-2 py-2 line-clamp-3">No piercing required. Bold edge that grips the ear with confidence.</p>
+          <a href="#" class="purchase-button col-span-2 flex items-center justify-center gap-2 p-4 rounded-full font-bold border border-transparent"
+             data-id="ear-cuff" data-name="Ear Cuff" data-price="1200" data-image="img/product-20.jpg">
+            Add To Cart
+          </a>
+        </section>
+
+        <!-- ============ Product 21 ============ -->
+        <section class="product-card extra-card group relative grid grid-cols-[1fr_max-content] gap-y-2 gap-x-4 p-4 rounded-[40px]
+                         shadow-[0_20px_40px_-14px_rgba(0,0,0,0.25)] bg-lightest text-darkest"
+                  style="--accent:oklch(0.5 0.27 275.83); --btn-bg:var(--accent); --btn-fg: oklch(from var(--accent) sign(0.7 - l) 0 0);">
+          <div class="thumb-stack grid col-span-2">
+            <img class="[grid-area:1/1] w-full aspect-square rounded-[24px] brightness-[0.8] grayscale"
+                 src="img/product-21.jpg" alt="" width="400" height="400" />
+            <img class="[grid-area:1/1] w-full aspect-square rounded-[24px]"
+                 src="img/product-21.jpg" alt="" width="400" height="400" />
+          </div>
+          <h2 class="text-base md:text-2xl font-medium py-2 self-center">Signet Ring</h2>
+          <p class="justify-self-end self-center py-1.5 px-3 rounded-full font-medium tabular-nums"
+             style="background-color: var(--accent); color: var(--btn-fg);">₦3,500</p>
+          <p class="col-span-2 py-2 line-clamp-3">Heritage meets modern cool. Engravable, iconic, and entirely your own.</p>
+          <a href="#" class="purchase-button col-span-2 flex items-center justify-center gap-2 p-4 rounded-full font-bold border border-transparent"
+             data-id="signet-ring" data-name="Signet Ring" data-price="3500" data-image="img/product-21.jpg">
+            Add To Cart
+          </a>
+        </section>
+
+      </div>
+    </div>
+
+  </main>
+</section>
+
+
+      <!-- ============ Shop With Us ============ -->
+
+
+<section id="services">
+    <div class="w-full py-20 px-6 flex flex-col items-center">
+    <div class="text-center mx-auto">
+        <h2 class="text-3xl md:text-4xl font-medium text-center mb-8">
+            Why Shop With Us?
+        </h2>
+        <p class="text-sm md:text-base text-slate-600 mt-3 max-w-[530px] mx-auto">Experience the Heemah Jewelry difference — genuine materials, honest pricing, and service that cares as much as you do.</p>
+    </div>
+
+    <!--  Features Grid  -->
+    <div class="w-full max-w-5xl mx-auto mt-16 relative grid grid-cols-1 md:grid-cols-3 border-x border-slate-100 md:divide-x divide-y md:divide-y-0 divide-slate-100">
+     
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[80vw] h-px bg-linear-to-r from-slate-50 via-slate-200 to-slate-50"></div>
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80vw] h-px bg-linear-to-r from-slate-50 via-slate-200 to-slate-50"></div>
+
+        <!-- Genuine Materials -->
+         
+        <div class="flex flex-col items-start px-6 py-8 hover:bg-slate-50 transition-colors">
+            <div class="size-13 flex items-center justify-center border border-slate-200 rounded-lg mb-11">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 3h12l4 6-10 13L2 9Z" stroke="#314158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 3 8 9l4 13 4-13-3-6" stroke="#314158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 9h20" stroke="#314158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="text-base font-medium text-slate-800">Genuine Materials</h3>
+            <p class="text-sm text-slate-600 mt-2.5">
+                Every piece is made with quality cubic zirconia, sterling silver, and stainless steel — no shortcuts, no fakes.
+            </p>
+        </div>
+
+        <!-- Honest Pricing -->
+        <div class="flex flex-col items-start px-6 py-8 hover:bg-slate-50 transition-colors">
+            <div class="size-13 flex items-center justify-center border border-slate-200 rounded-lg mb-11">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z" stroke="#314158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="#314158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="text-base font-medium text-slate-800">Honest, Affordable Pricing</h3>
+            <p class="text-sm text-slate-600 mt-2.5">
+                Statement-piece looks without the statement-piece markup. No hidden fees, no inflated tags.
+            </p>
+        </div>
+
+        <!-- Fast Delivery -->
+        <div class="flex flex-col items-start px-6 py-8 hover:bg-slate-50 transition-colors">
+            <div class="size-13 flex items-center justify-center border border-slate-200 rounded-lg mb-11">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2" stroke="#314158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 18H9" stroke="#314158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14" stroke="#314158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="17" cy="18" r="2" stroke="#314158" stroke-width="2"/><circle cx="7" cy="18" r="2" stroke="#314158" stroke-width="2"/></svg>
+            </div>
+            <h3 class="text-base font-medium text-slate-800">Fast, Trackable Delivery</h3>
+            <p class="text-sm text-slate-600 mt-2.5">
+                Your order leaves carefully packed and reaches you quickly, with tracking every step of the way.
+            </p>
+            
+        </div>
+
+        <!-- Secure Packaging -->
+        <div class="flex flex-col items-start px-6 py-8 hover:bg-slate-50 transition-colors">
+            <div class="size-13 flex items-center justify-center border border-slate-200 rounded-lg mb-11">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" stroke="#314158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="#314158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="text-base font-medium text-slate-800">Carefully Packaged</h3>
+            <p class="text-sm text-slate-600 mt-2.5">
+                Every piece arrives cushioned and protected, so it looks just as good in hand as it did online.
+            </p>
+        </div>
+
+        <!-- Easy Returns -->
+        <div class="flex flex-col items-start px-6 py-8 hover:bg-slate-50 transition-colors">
+            <div class="size-13 flex items-center justify-center border border-slate-200 rounded-lg mb-11">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" stroke="#314158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 3v5h5" stroke="#314158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="text-base font-medium text-slate-800">Easy Returns & Exchanges</h3>
+            <p class="text-sm text-slate-600 mt-2.5">
+                Not quite right? Swap it or send it back — no stress, no complicated process.
+            </p>
+        </div>
+
+        <!-- Customer Support -->
+        <div class="flex flex-col items-start px-6 py-8 hover:bg-slate-50 transition-colors">
+            <div class="size-13 flex items-center justify-center border border-slate-200 rounded-lg mb-11">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H3v-7a9 9 0 1 1 18 0v7h-3a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3" stroke="#314158" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="text-base font-medium text-slate-800">Friendly Customer Support</h3>
+            <p class="text-sm text-slate-600 mt-2.5">
+                Questions about sizing, care, or your order? A real person is just a message away.
+            </p>
+            <a href="https://wa.me/2348132852928?text=Hi%20HEEMAH%2C%20I%27m%20interested%20in%20your%20jewelry." class="mt-8 flex items-center gap-1.5 text-sm text-slate-600 hover:text-slate-800 transition-colors group">
+                Chat With Us
+                <svg class="transition-transform group-hover:translate-x-0.5" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+        </div>
+    </div>
+</div>
+</section>
+<!-- ============ Contact ============ -->
+ <section id="contact">
+<div class="flex items-center justify-center px-4 py-20">
+    <div class="max-w-5xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
+
+        <div class="flex flex-col items-start text-left">
+            <div class="inline-flex items-center justify-center border border-zinc-200 bg-indigo-600 rounded-full px-4 py-1.5 text-sm text-white mb-4">
+                Contact us
+            </div>
+            <h1 class="text-[40px] font-medium text-zinc-900 leading-tight mb-1.5">
+                Still have questions?
+            </h1>
+            <p class="text-sm text-zinc-600 max-w-[360px] mb-6 leading-relaxed">
+                Need help with components, setup, or customization? We're here to support you.
+            </p>
+
+            <div class="flex flex-col space-y-5">
+                <div class="flex items-center gap-2">
+                    <div class="size-9 rounded-full bg-zinc-100 flex items-center justify-center shrink-0">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m18.333 5.836-7.492 4.772a1.67 1.67 0 0 1-1.674 0l-7.5-4.772" stroke="#71717b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M16.667 3.336H3.333c-.92 0-1.666.746-1.666 1.667v10c0 .92.746 1.666 1.666 1.666h13.334c.92 0 1.666-.746 1.666-1.666v-10c0-.92-.746-1.667-1.666-1.667" stroke="#71717b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <span class="text-sm text-zinc-600">hello@prebuiltUI.com</span>
+                </div>
+
+                <div class="flex items-center gap-2">
+                    <div class="size-9 rounded-full bg-zinc-100 flex items-center justify-center shrink-0">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#a)"><path d="M11.527 13.804a.83.83 0 0 0 1.01-.252l.296-.388a1.67 1.67 0 0 1 1.334-.667h2.5a1.667 1.667 0 0 1 1.666 1.667v2.5a1.667 1.667 0 0 1-1.666 1.667 15 15 0 0 1-15-15 1.667 1.667 0 0 1 1.666-1.667h2.5A1.667 1.667 0 0 1 7.5 3.331v2.5a1.67 1.67 0 0 1-.667 1.333l-.39.293A.83.83 0 0 0 6.2 8.484a11.67 11.67 0 0 0 5.327 5.32" stroke="#71717b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h20v20H0z"/></clipPath></defs></svg>
+                    </div>
+                    <span class="text-sm text-zinc-600">+91-9341555-010</span>
+                </div>
+
+                <div class="flex items-center gap-2">
+                    <div class="size-9 rounded-full bg-zinc-100 flex items-center justify-center shrink-0">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.667 8.33c0 4.162-4.616 8.495-6.166 9.833a.83.83 0 0 1-1.002 0c-1.55-1.338-6.166-5.671-6.166-9.832a6.667 6.667 0 0 1 13.334 0" stroke="#71717b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 10.836a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5" stroke="#71717b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <span class="text-sm text-zinc-600">2425 HSR Layout, Bangalore, TX73301</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="border border-zinc-200 rounded-2xl p-6 md:p-8 w-full max-w-[470px] mx-auto md:ml-auto md:mr-0 bg-indigo-200">
+            <form class="flex flex-col space-y-6">
+                
+                <div class="flex flex-col space-y-2">
+                    <label class="text-sm text-zinc-700">Full Name</label>
+                    <input type="text" placeholder="Enter your name" class="rounded-full border border-zinc-200 px-4 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-500 focus:outline-none focus:border-zinc-400" />
+                </div>
+
+                <div class="flex flex-col space-y-2">
+                    <label class="text-sm text-zinc-700">Email address</label>
+                    <input type="email" placeholder="Enter you email" class="rounded-full border border-zinc-200 px-4 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-500 focus:outline-none focus:border-zinc-400" />
+                </div>
+
+                <div class="flex flex-col space-y-2">
+                    <label class="text-sm text-zinc-700">Message</label>
+                    <textarea placeholder="Enter your message" class="rounded-xl border border-zinc-200 px-4 py-3 text-sm text-zinc-900 placeholder:text-zinc-500 focus:outline-none focus:border-zinc-400 h-24 resize-none"></textarea>
+                </div>
+
+                <button class="w-full bg-indigo-600 text-white text-sm py-3 rounded-full hover:bg-indigo-700 transition-colors cursor-pointer">
+                    Submit
+                </button>
+            </form>
+        </div>
+
+    </div>
+</div>
+ </section>
+ <footer class="bg-white border-t border-slate-200 mt-16">
+
+  <div class="max-w-7xl mx-auto px-5 py-10">
+
+    <!-- Main Footer -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+      <!-- Brand -->
+      <div>
+        <h2 class="text-2xl font-bold text-indigo-600">
+          HEEMAH JEWELRY
+        </h2>
+
+        <p class="mt-3 text-slate-600 text-sm leading-6">
+          Elegant jewelry crafted to celebrate beauty, confidence,
+          and life's special moments.
+        </p>
+      </div>
+
+      <!-- Shop -->
+      <div>
+        <h3 class="font-semibold text-slate-800 mb-4">
+          Shop
+        </h3>
+
+        <ul class="space-y-2 text-sm">
+          <li><a href="#" class="text-slate-600 hover:text-indigo-600">Rings</a></li>
+          <li><a href="#" class="text-slate-600 hover:text-indigo-600">Necklaces</a></li>
+          <li><a href="#" class="text-slate-600 hover:text-indigo-600">Bracelets</a></li>
+          <li><a href="#" class="text-slate-600 hover:text-indigo-600">Earrings</a></li>
+        </ul>
+      </div>
+
+      <!-- Support -->
+      <div>
+        <h3 class="font-semibold text-slate-800 mb-4">
+          Support
+        </h3>
+
+        <ul class="space-y-2 text-sm">
+          <li><a href="#" class="text-slate-600 hover:text-indigo-600">Contact Us</a></li>
+          <li><a href="#" class="text-slate-600 hover:text-indigo-600">Shipping</a></li>
+          <li><a href="#" class="text-slate-600 hover:text-indigo-600">Returns</a></li>
+          <li><a href="#" class="text-slate-600 hover:text-indigo-600">FAQ</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter -->
+      <div>
+        <h3 class="font-semibold text-slate-800 mb-4">
+          Stay Updated
+        </h3>
+
+        <p class="text-sm text-slate-600 mb-3">
+          Get updates on new arrivals and special offers.
+        </p>
+
+        <form class="space-y-3">
+          <input
+            type="email"
+            placeholder="Your email"
+            class="w-full px-4 py-2.5 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          >
+
+          <button
+            class="w-full bg-indigo-600 text-white py-2.5 rounded-lg hover:bg-indigo-700 transition">
+            Subscribe
+          </button>
+        </form>
+      </div>
+
+    </div>
+
+    <!-- Divider -->
+    <div class="border-t border-slate-200 mt-10 pt-6">
+
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+
+        <p class="text-sm text-slate-500 text-center md:text-left">
+          © 2026 HEEMAH JEWELRY. All rights reserved.
+        </p>
+
+        <!-- Socials -->
+        <div class="flex items-center gap-5">
+
+          <a href="#" class="text-slate-500 hover:text-indigo-600 transition">
+            <i class="fab fa-instagram text-xl"></i>
+          </a>
+
+          <a href="#" class="text-slate-500 hover:text-indigo-600 transition">
+            <i class="fab fa-facebook-f text-xl"></i>
+          </a>
+
+          <a href="#" class="text-slate-500 hover:text-indigo-600 transition">
+            <i class="fab fa-tiktok text-xl"></i>
+          </a>
+
+          <a href="#" class="text-slate-500 hover:text-indigo-600 transition">
+            <i class="fab fa-whatsapp text-xl"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</footer>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- ============ Cart Drawer + Checkout Modal (markup lives in cart.html, injected by cart.js) ============ -->
+<link rel="stylesheet" href="assets/css/cart.css">
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<script src="assets/js/cart.js" defer></script>
+<script src="assets/js/checkout.js" defer></script>
+<script src="assets/js/script.js" defer></script>
+</body>
+</html>

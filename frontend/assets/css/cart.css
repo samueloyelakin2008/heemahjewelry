@@ -1,0 +1,462 @@
+/* =====================================================================
+   HEEMAH JEWELRY — Cart Drawer + Checkout Modal
+   Built to sit on top of the existing Tailwind/indigo brand styling.
+   Gold is used as a deliberate accent (progress steps, totals, the
+   "secure payment" badge) rather than repainting the whole site —
+   it should read as "fine jewelry detail", not a competing palette.
+   ===================================================================== */
+
+:root {
+  --hj-gold: #c9a227;
+  --hj-gold-dark: #8a6d1f;
+  --hj-gold-soft: #f7efd9;
+  --hj-indigo: #4f46e5;
+  --hj-ink: #1f1f29;
+  --hj-overlay: rgba(17, 14, 7, 0.55);
+}
+
+/* ---------- Shared overlay ---------- */
+.hj-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--hj-overlay);
+  backdrop-filter: blur(2px);
+  z-index: 9998;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease;
+}
+.hj-overlay.hj-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ---------- Cart Drawer ---------- */
+#hj-cart-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: min(420px, 100vw);
+  background: #fff;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: -12px 0 40px rgba(0, 0, 0, 0.18);
+}
+#hj-cart-drawer.hj-open {
+  transform: translateX(0);
+}
+
+.hj-drawer-header {
+  padding: 20px 22px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #1e1b4b, #4c1d95);
+}
+.hj-drawer-header h3 {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+.hj-drawer-close {
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  color: #fff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+.hj-drawer-close:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.hj-drawer-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 18px;
+}
+
+.hj-empty-cart {
+  text-align: center;
+  padding: 60px 16px;
+  color: #888;
+}
+.hj-empty-cart svg {
+  margin: 0 auto 12px;
+  display: block;
+  opacity: 0.5;
+}
+
+.hj-cart-item {
+  display: grid;
+  grid-template-columns: 64px 1fr auto;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid #f1f1f1;
+  align-items: center;
+}
+.hj-cart-item img {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 12px;
+  background: #f4f1ea;
+}
+.hj-item-name {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--hj-ink);
+  margin: 0 0 4px;
+}
+.hj-item-price {
+  font-size: 0.85rem;
+  color: var(--hj-gold-dark);
+  font-weight: 600;
+}
+.hj-qty-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+.hj-qty-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  background: #fafafa;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease;
+}
+.hj-qty-btn:hover {
+  background: var(--hj-gold-soft);
+  border-color: var(--hj-gold);
+}
+.hj-qty-val {
+  min-width: 18px;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.hj-remove-btn {
+  align-self: start;
+  background: none;
+  border: none;
+  color: #b5524a;
+  cursor: pointer;
+  font-size: 0.78rem;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.hj-drawer-footer {
+  border-top: 1px solid #eee;
+  padding: 18px 22px 22px;
+  background: #fafafa;
+}
+.hj-summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.92rem;
+  margin-bottom: 6px;
+  color: #555;
+}
+.hj-summary-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--hj-ink);
+  margin: 10px 0 16px;
+}
+.hj-summary-total span:last-child {
+  color: var(--hj-gold-dark);
+}
+
+.hj-btn-primary {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: linear-gradient(135deg, var(--hj-gold), var(--hj-gold-dark));
+  color: #fff;
+  border: none;
+  padding: 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 8px 20px -8px rgba(201, 162, 39, 0.7);
+}
+.hj-btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 24px -8px rgba(201, 162, 39, 0.8);
+}
+.hj-btn-primary:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+.hj-btn-secondary {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: #fff;
+  color: var(--hj-ink);
+  border: 1.5px solid #ddd;
+  padding: 12px;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: border-color 0.15s ease;
+}
+.hj-btn-secondary:hover {
+  border-color: var(--hj-gold);
+}
+
+/* ---------- Checkout Modal ---------- */
+#hj-checkout-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.22s ease;
+}
+#hj-checkout-modal.hj-open {
+  opacity: 1;
+  visibility: visible;
+}
+.hj-modal-card {
+  background: #fff;
+  width: min(520px, 100%);
+  max-height: 92vh;
+  overflow-y: auto;
+  border-radius: 24px;
+  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.35);
+  transform: scale(0.96) translateY(10px);
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+#hj-checkout-modal.hj-open .hj-modal-card {
+  transform: scale(1) translateY(0);
+}
+
+.hj-modal-header {
+  padding: 22px 24px 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.hj-modal-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.hj-modal-header h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--hj-ink);
+}
+
+/* Step progress indicator: Cart -> Details -> Payment -> Success */
+.hj-steps {
+  display: flex;
+  align-items: center;
+}
+.hj-step {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+.hj-step-circle {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #eee;
+  color: #999;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+.hj-step.hj-active .hj-step-circle,
+.hj-step.hj-done .hj-step-circle {
+  background: linear-gradient(135deg, var(--hj-gold), var(--hj-gold-dark));
+  color: #fff;
+}
+.hj-step-label {
+  font-size: 0.68rem;
+  color: #999;
+  margin-left: 6px;
+  white-space: nowrap;
+  transition: color 0.25s ease;
+}
+.hj-step.hj-active .hj-step-label,
+.hj-step.hj-done .hj-step-label {
+  color: var(--hj-ink);
+  font-weight: 600;
+}
+.hj-step-line {
+  flex: 1;
+  height: 2px;
+  background: #eee;
+  margin: 0 6px;
+  transition: background 0.25s ease;
+}
+.hj-step-line.hj-done {
+  background: var(--hj-gold);
+}
+
+.hj-modal-close {
+  background: #f5f5f5;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hj-modal-body {
+  padding: 20px 24px 24px;
+}
+
+.hj-field {
+  margin-bottom: 14px;
+}
+.hj-field label {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 5px;
+}
+.hj-field input,
+.hj-field textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid #e2e2e2;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-family: inherit;
+  transition: border-color 0.15s ease;
+}
+.hj-field input:focus,
+.hj-field textarea:focus {
+  outline: none;
+  border-color: var(--hj-gold);
+}
+.hj-field-error {
+  font-size: 0.72rem;
+  color: #c0392b;
+  margin-top: 4px;
+  display: none;
+}
+.hj-field.hj-invalid input,
+.hj-field.hj-invalid textarea {
+  border-color: #c0392b;
+}
+.hj-field.hj-invalid .hj-field-error {
+  display: block;
+}
+
+.hj-trust-badges {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  font-size: 0.72rem;
+  color: #888;
+  margin-top: 14px;
+}
+.hj-trust-badges svg {
+  width: 14px;
+  height: 14px;
+  color: var(--hj-gold-dark);
+}
+
+.hj-loading-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+  vertical-align: -2px;
+  animation: hj-spin 0.7s linear infinite;
+}
+@keyframes hj-spin {
+  to { transform: rotate(360deg); }
+}
+
+.hj-alert {
+  border-radius: 12px;
+  padding: 11px 14px;
+  font-size: 0.82rem;
+  margin-bottom: 14px;
+}
+.hj-alert-error {
+  background: #fdecea;
+  color: #9b2c20;
+  border: 1px solid #f5c2bd;
+}
+.hj-alert-info {
+  background: var(--hj-gold-soft);
+  color: var(--hj-gold-dark);
+  border: 1px solid #ecdca8;
+}
+
+.hj-success-wrap {
+  text-align: center;
+  padding: 18px 4px 6px;
+}
+.hj-success-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--hj-gold), var(--hj-gold-dark));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+.hj-success-icon svg {
+  width: 30px;
+  height: 30px;
+  color: #fff;
+}
+
+@media (max-width: 480px) {
+  .hj-step-label { display: none; }
+}
