@@ -11,7 +11,7 @@
 
   // Change this if the backend is hosted on a different origin than the
   // storefront (e.g. frontend on Netlify, API on Render/Railway).
-  var API_BASE = window.HJ_API_BASE || "https://heemahjewelry.onrender.com/backend/api/cart-checkout";
+  var API_BASE = window.HJ_API_BASE || "https://heemahjewelry.onrender.com/api";
 
   var STEPS = ["cart", "details", "payment", "success"];
   var STEP_LABELS = { cart: "Cart", details: "Details", payment: "Payment", success: "Done" };
